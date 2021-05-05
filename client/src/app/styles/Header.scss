@@ -1,0 +1,18 @@
+.main-header {
+  width: 90%;
+  height: 5rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: #fff;
+  border-radius: 40px;
+
+  & .main-header--text {
+      text-transform: uppercase;
+      font-size: 3rem;
+      text-shadow: 2px 3px rgba(0, 0, 0, 0.25);
+  }
+}
