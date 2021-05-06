@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .App {
   width: 100%;
   height: auto;
@@ -7,4 +9,12 @@
   flex-wrap: wrap;
 }
 
-
+.container-main {
+  width: auto;
+  min-width: 1040px;
+  margin: $container-mb;
+  background: $container-bg;
+  border-radius: $container-border-radius;
+  box-shadow: $container-shadow;
+  overflow: hidden;
+}

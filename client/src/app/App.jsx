@@ -1,7 +1,7 @@
 import './styles/App.scss';
 import Header from './components/Header'
 import Menu from './components/Menu'
-import ContainerMain from './components/ContainerMain'
+import Bet from './components/Pages/Bet'
 
 function App() {
   return (
@@ -11,7 +11,9 @@ function App() {
 
       <Menu/>
 
-      <ContainerMain/>
+      <div className="container-main">
+        <Bet></Bet>
+      </div>
 
     </div>
   );
