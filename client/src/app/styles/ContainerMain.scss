@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+.container-main {
+    width: auto;
+    min-width: 1040px;
+    margin: $container-mb;
+    background: $container-bg;
+    border-radius: $container-border-radius;
+    box-shadow: $container-shadow;
+    overflow: hidden;
+}

@@ -1,14 +1,23 @@
-.main-header {
-  width: 90%;
-  height: 5rem;
-  margin: 2rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 10px 10px 4px 4px rgba(0, 0, 0, 0.25);
+@import './variables.scss';
+@import './mixins.scss';
 
-  background: #fff;
-  border-radius: 40px;
+.main-header {
+  width: 100%;
+  height: auto;
+  margin: auto 1.5rem;
+  @include flex-center;
+  
+
+  & .main-header--container{
+    width: 100%;
+    padding: 1rem;
+    margin: 0 1.5rem;
+    margin-top: .5rem;
+    @include flex-center;
+    box-shadow: $container-shadow;
+    background: $container-bg;
+    border-radius: $container-border-radius;
+  }
 
   & .main-header--text {
       text-transform: uppercase;
