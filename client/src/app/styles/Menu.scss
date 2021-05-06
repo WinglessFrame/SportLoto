@@ -19,14 +19,15 @@
         justify-content: space-between;
 
         
-        & .btn {
+        & .nav-btn {
+            @include flex-center;
             margin: 1rem auto;
-            padding: 1rem;
+            padding: 1rem 2rem;
             width: 80%;
             font-size: 1rem;
-            font-family: inherit;
-    
+            background: #F1C9FF;
             border-radius: $btn-border-radius;
+            text-decoration: none;
         }
     }
 

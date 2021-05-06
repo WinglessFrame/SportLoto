@@ -1,3 +1,5 @@
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import './styles/App.scss';
 import Header from './components/Header'
 import Menu from './components/Menu'
@@ -5,17 +7,22 @@ import Bet from './components/Pages/Bet'
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
 
-      <Header/>
+        <Header />
 
-      <Menu/>
+        <Menu />
 
-      <div className="container-main">
-        <Bet></Bet>
+        <div className="container-main">
+          <Route exact path="/game">
+            <Bet/>
+          </Route>
+          
+        </div>
+
       </div>
-
-    </div>
+    </BrowserRouter>
   );
 }
 
