@@ -26,7 +26,7 @@ export default function Bet() {
             <form method="POST" onSubmit={submit}>
 
                 <div className='bet-form-container'>
-                    <input type="text" className="bet-input" id="input-1" tabIndex={1} value={inputsValues[0]} onChange={({ target }) => onChangeHandler(target, 0)} />
+                    <input type="text" className="bet-input" id="input-1" tabIndex={1} value={inputsValues[0]} onChange={({ target }) => onChangeHandler(target, 0)}/>
                     <input type="text" className="bet-input" id="input-2" tabIndex={2} value={inputsValues[1]} onChange={({ target }) => onChangeHandler(target, 1)}/>
                     <input type="text" className="bet-input" id="input-3" tabIndex={3} value={inputsValues[2]} onChange={({ target }) => onChangeHandler(target, 2)}/>
                     <input type="text" className="bet-input" id="input-4" tabIndex={4} value={inputsValues[3]} onChange={({ target }) => onChangeHandler(target, 3)}/>
