@@ -1,12 +1,9 @@
 @import './mixins.scss', './variables.scss', './shared.scss';
 
 .main-menu {
-    margin: 0 3rem;
-    margin: 0 auto;
     width: 15%;
     min-width: 220px;
-    min-height: 550px;
-    height: 100%;
+    height: auto;
     background: $container-bg;
     border-radius: $container-border-radius;
     box-shadow: $container-shadow;

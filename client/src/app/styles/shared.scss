@@ -13,7 +13,12 @@
   transition: 0.5s ease;
 }
 
-.btn:hover {
+.btn:hover,
+.active-btn {
   transform: translateY(5%);
   box-shadow: none;
+}
+
+.active-btn {
+  box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
 }

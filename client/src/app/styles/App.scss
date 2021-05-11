@@ -4,7 +4,7 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  @include flex-center;
+  
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +13,8 @@
 .menu-main-container {
   margin-top: 1rem;
   display: flex;
-  flex-direction: row;
+  @include flex-center;
+  justify-content: space-between;
   width: 90%;
   height: 100%;
   flex-wrap: wrap;
@@ -21,11 +22,10 @@
 
 .container-main {
   width: 70%;
-  height: 100%;
-  min-height: 800px;
-  min-width: 400px;
-  min-height: 500px;
-  margin: $container-mb;
+  height: auto;
+  min-height: 100%;
+  min-width: 600px;
+  min-height: 400px;
   background: $container-bg;
   border-radius: $container-border-radius;
   box-shadow: $container-shadow;
