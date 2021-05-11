@@ -1,4 +1,4 @@
-@import './mixins.scss', './variables.scss';
+@import './mixins.scss', './variables.scss', './shared.scss';
 
 .main-menu {
     margin: 0 3rem;
@@ -18,17 +18,21 @@
         flex-direction: column;
         justify-content: space-between;
 
-        
-        & .nav-btn {
-            @include flex-center;
-            margin: 1rem auto;
-            padding: 1rem 2rem;
-            width: 80%;
-            font-size: 1rem;
-            background: #F1C9FF;
-            border-radius: $btn-border-radius;
-            text-decoration: none;
+        & .profile-btn {
+            color: #fff;
+            background: #7C5BFF;
         }
+
+        & .game-btn {
+            color: #000;
+            background: #FFFBA6;
+        }
+
+        & .history-btn {
+            color: #000;
+            background: #FFA6A6;
+        }
+
     }
 
     & .profile-thumbnail {

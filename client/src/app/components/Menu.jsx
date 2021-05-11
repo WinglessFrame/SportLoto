@@ -9,11 +9,11 @@ export default function Menu() {
         <menu className='main-menu'>
             <div className='buttons-container'>
 
-                <Link className='nav-btn' to='/profile'>Profile</Link>
+                <Link className='btn profile-btn' to='/profile'>Profile</Link>
 
-                <Link className='nav-btn' to='/game'>Game</Link>
+                <Link className='btn game-btn' to='/game'>Game</Link>
 
-                <Link className='nav-btn' to='/history'>History</Link>
+                <Link className='btn history-btn' to='/history'>History</Link>
 
             </div>
             <div className='profile-thumbnail'>

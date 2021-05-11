@@ -1,11 +1,92 @@
-@import './variables.scss';
+@import "./variables.scss";
+@import "./mixins.scss";
 
 .bet {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+  flex-direction: column;
+  justify-content: space-between;
 
-    background-image: url(../images/v894-kul-07-a_1.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(../images/v894-kul-07-a_1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  & .bet-header {
+    width: 100%;
+    margin-bottom: 2rem;
+    @include flex-center;
+    padding: 0.5rem 5rem;
+    background: rgba(#cc1f1f, 0.5);
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 5px 5px 5px #000;
+    font-size: 4rem;
+    font-style: italic;
+  }
+
+  & .bet-price {
+    margin: 1rem 0 2rem 0;
+    padding: 1rem 0;
+    width: 40%;
+    @include flex-center;
+    background: #FF9D9D;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+    text-shadow: 4px 4px 4px rgb(88, 88, 88);
+    box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+    & .bet-price-txt {
+      letter-spacing: normal;
+    }
+  }
+
+  & form {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & .bet-form-container {
+      height: 10rem;
+      min-width: 750px;
+      background: #20612a;
+      @include flex-center;
+      padding: 2rem;
+      border-radius: $container-border-radius;
+      box-shadow: $container-shadow;
+
+      & input {
+        margin: 0 2rem;
+        width: 2rem;
+        height: 2rem;
+        padding: 2rem;
+        color: #000;
+        text-align: center;
+        font-size: 2.5rem;
+        border-radius: 10px;
+        border: 10px solid rgba(0,0,0,0);
+        outline: none;
+        transition: border .25s linear;
+        z-index: 999;
+      }
+
+      & input:focus {
+        border: 10px solid #fece24;
+      }
+    }
+
+    & .bet-submit {
+        margin: 5rem 0 3rem 0;
+        width: 40%;
+        font-weight: 800;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: inherit;
+        background: rgba(154,255,171, .75);
+        border: none;
+    }
+  }
 }
