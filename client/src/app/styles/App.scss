@@ -1,17 +1,30 @@
-@import "./variables.scss";
+@import "./variables.scss", './mixins.scss';
 
 .App {
   width: 100%;
   height: auto;
   min-height: 100vh;
-
+  @include flex-center;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
 
+.menu-main-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
 .container-main {
-  width: 75%;
+  width: 70%;
+  height: 100%;
+  min-height: 800px;
   min-width: 400px;
+  min-height: 500px;
   margin: $container-mb;
   background: $container-bg;
   border-radius: $container-border-radius;

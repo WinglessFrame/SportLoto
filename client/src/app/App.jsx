@@ -12,13 +12,13 @@ function App() {
 
         <Header />
 
-        <Menu />
-
-        <div className="container-main">
-          <Route exact path="/game">
-            <Bet/>
-          </Route>
-          
+        <div className='menu-main-container'>
+          <Menu />
+          <div className="container-main">
+            <Route exact path="/game">
+              <Bet />
+            </Route>
+          </div>
         </div>
 
       </div>

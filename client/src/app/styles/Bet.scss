@@ -49,8 +49,8 @@
     justify-content: space-between;
 
     & .bet-form-container {
-      height: 10rem;
-      min-width: 750px;
+      height: 8rem;
+      min-width: 720px;
       background: #20612a;
       @include flex-center;
       padding: 2rem;
@@ -59,16 +59,17 @@
 
       & input {
         margin: 0 2rem;
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
         color: #000;
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 2rem;
         border-radius: 10px;
         border: 10px solid rgba(0,0,0,0);
         outline: none;
         transition: border .25s linear;
-        z-index: 999;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
       }
 
       & input:focus {
@@ -77,7 +78,7 @@
     }
 
     & .bet-submit {
-        margin: 5rem 0 3rem 0;
+        margin: 3rem 0;
         width: 40%;
         font-weight: 800;
         font-size: 2rem;
