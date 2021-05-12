@@ -4,7 +4,7 @@ import BetPrice from '../shared/BetPrice'
 import '../../styles/History.scss'
 
 export default function History() {
-    const seedData = {
+    const seedData = { // TODO get data from API
         'bets': [
             {
                 pk: 25,
