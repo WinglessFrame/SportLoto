@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/App.scss';
 import Header from './components/Header'
 import Menu from './components/Menu'
-import Bet from './components/Pages/Bet'
+import Game from './components/Pages/Game'
 import History from './components/Pages/History';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <div className="container-main">
             
             <Route exact path="/game">
-              <Bet />
+              <Game />
             </Route>
 
             <Route exact path="/history">

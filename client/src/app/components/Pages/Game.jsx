@@ -1,9 +1,8 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState, useRef } from 'react'
 import BetPrice from '../shared/BetPrice'
-import '../../styles/Bet.scss'
+import '../../styles/Game.scss'
 
-export default function Bet() {
+export default function Game() {
 
     const [inputsValues, setInputsValues] = useState({})
     const inputsRef = useRef([])

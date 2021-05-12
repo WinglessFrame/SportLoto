@@ -26,8 +26,9 @@
     justify-content: space-between;
 
     & .bet-form-container {
+      margin: 2rem 0;
       height: 8rem;
-      min-width: 720px;
+      min-width: 600px;
       background: #20612a;
       @include flex-center;
       padding: 2rem;

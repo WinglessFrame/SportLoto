@@ -2,16 +2,14 @@
 @import './mixins.scss';
 
 .main-header {
-  width: 90%;
-  height: auto;
-  
+  width: 100%;
+  height: 8rem;
   @include flex-center;
-  
 
   & .main-header--container{
     width: 100%;
     padding: 1rem;
-    margin: .5rem 0;
+    margin: .5rem 5rem;
     margin-top: .5rem;
     @include flex-center;
     box-shadow: $container-shadow;

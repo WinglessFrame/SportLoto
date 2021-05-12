@@ -6,3 +6,17 @@
     background: #552B2B;
     color: #fff;
 }
+
+.history-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.history-item-win {
+    background: #5CA04A;
+}
+
+.history-item-lose {
+    background: #C37F7F;
+}
