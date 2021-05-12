@@ -8,9 +8,13 @@
 }
 
 .history-item {
+    padding: 0 1rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
+    margin-top: 1rem;
+    font-size: 1.5rem;
 }
 
 .history-item-win {
@@ -18,5 +22,22 @@
 }
 
 .history-item-lose {
-    background: #C37F7F;
+    background: #AD2121;
 }
+
+.history-item--content {
+    margin: 0 2rem;
+    @include flex-center;
+    flex-direction: column;
+    color: #fff;
+}
+
+// .win-info {
+//     position: absolute;
+//     right: 30%;
+// }
+
+// .timestamp {
+//     position: absolute;
+//     right: 10%;
+// }

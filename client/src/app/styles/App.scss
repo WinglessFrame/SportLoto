@@ -35,4 +35,8 @@
     flex-direction: column;
     @include flex-center;
   }
+
+  .container-main {
+    width: 90%;
+  }
 }

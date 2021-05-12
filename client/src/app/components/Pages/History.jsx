@@ -18,7 +18,9 @@ export default function History() {
                 price: 1,
                 time: "17:44",
                 date: "20 April, 2021",
-                result: true
+                result: true,
+                matchesCount: 4,
+                winPrice: 8
             },
             {
                 pk: 23,
@@ -32,7 +34,9 @@ export default function History() {
                 price: 2,
                 time: "19:35",
                 date: "02 May, 2021",
-                result: false
+                result: true,
+                matchesCount: 3,
+                winPrice: 6
             },
             {
                 pk: 11,
@@ -57,9 +61,17 @@ export default function History() {
             {seedData['bets'].map(record => {
                 return (
                     <div className={`history-item ${betResult(record.result)}`} key={record.pk}>
+
                         <BetPrice price={record.price}/>
 
-                        <div className='history-item--timestamp'>
+                        {record.result && 
+                            <div className='history-item--content win-info'>
+                                <p>Match : {record.matchesCount}</p>
+                                <p>Win: {record.winPrice}</p>
+                            </div>
+                        }
+
+                        <div className='history-item--content timestamp'>
                             <p>{record.time}</p>
                             <p>{record.date}</p>
                         </div>
