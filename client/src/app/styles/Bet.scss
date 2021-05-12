@@ -14,33 +14,10 @@
   background-repeat: no-repeat;
 
   & .bet-header {
-    width: 100%;
-    margin-bottom: 2rem;
-    @include flex-center;
-    padding: 0.5rem 5rem;
     background: rgba(#cc1f1f, 0.5);
     color: #fff;
     letter-spacing: 4px;
     text-shadow: 5px 5px 5px #000;
-    font-size: 4rem;
-    font-style: italic;
-  }
-
-  & .bet-price {
-    margin: 1rem 0 2rem 0;
-    padding: 1rem 0;
-    width: 40%;
-    @include flex-center;
-    background: #FF9D9D;
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: 10px;
-    text-shadow: 4px 4px 4px rgb(88, 88, 88);
-    box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
-
-    & .bet-price-txt {
-      letter-spacing: normal;
-    }
   }
 
   & form {

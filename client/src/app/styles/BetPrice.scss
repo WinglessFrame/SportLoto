@@ -1,0 +1,41 @@
+@import './shared.scss';
+
+.bet-price {
+  margin: 1rem 0 2rem 0;
+  padding: 1rem 0;
+  width: 40%;
+  @include flex-center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 10px;
+  text-shadow: 4px 4px 4px rgb(88, 88, 88);
+  box-shadow: inset 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+
+  & .bet-price-txt {
+    letter-spacing: normal;
+  }
+}
+
+.bet-price-color-5 {
+    background: $bet-price-5;
+}
+
+.bet-price-color-4 {
+    background: $bet-price-4;
+}
+
+.bet-price-color-3 {
+    background: $bet-price-3;
+}
+
+.bet-price-color-2 {
+    background: $bet-price-2;
+}
+
+.bet-price-color-1 {
+    background: $bet-price-1;
+}
+
+.bet-price-color-default {
+    background: $bet-price-default;
+}

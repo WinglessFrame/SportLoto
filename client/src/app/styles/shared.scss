@@ -1,3 +1,6 @@
+@import './variables.scss';
+@import './mixins.scss';
+
 .btn {
   @include flex-center;
   margin: 1rem auto;
@@ -21,4 +24,13 @@
 
 .active-btn {
   box-shadow: inset 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 2rem;  
+  @include flex-center;
+  padding: 0.5rem 5rem;
+  font-size: 4rem;
+  font-style: italic;
 }

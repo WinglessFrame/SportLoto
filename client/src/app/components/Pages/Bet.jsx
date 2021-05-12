@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState, useRef } from 'react'
+import BetPrice from '../shared/BetPrice'
 import '../../styles/Bet.scss'
 
 export default function Bet() {
@@ -24,7 +26,7 @@ export default function Bet() {
         }
 
         if (event.keyCode === 8) { // backSpace
-            if (event.target.textLength === 0) {
+            if (event.target.value.toString().length === 0) {
                 if (idx === 0) return
                 inputsRef.current[idx - 1].focus()
             }
@@ -39,15 +41,15 @@ export default function Bet() {
     }
 
     const submit = (event) => {
-        event.preventDefault() //TODO
+        event.preventDefault() //TODO submit bet
     }
 
     return (
         <div className='bet'>
 
-            <header className="bet-header">Make a bet!</header>
+            <header className="header bet-header">Make a bet!</header>
 
-            <div className="bet-price">5$<span className='bet-price-txt'>Bet</span></div>
+            <BetPrice price={1} /> {/* //TODO get price from game info */}
 
             <form method="POST" onSubmit={submit}>
 

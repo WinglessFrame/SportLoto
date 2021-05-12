@@ -23,6 +23,7 @@
 .container-main {
   width: 70%;
   height: auto;
+  margin-bottom: $container-mb;
   min-height: 100%;
   min-width: 600px;
   min-height: 400px;
@@ -30,4 +31,12 @@
   border-radius: $container-border-radius;
   box-shadow: $container-shadow;
   overflow: hidden;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .menu-main-container {
+    flex-direction: column;
+    @include flex-center;
+  }
 }
