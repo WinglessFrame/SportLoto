@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Menu from './components/Menu'
 import Game from './components/Pages/Game'
 import History from './components/Pages/History';
+import Profile from './components/Pages/Profile';
 
 function App() {
   return (
@@ -18,13 +19,17 @@ function App() {
           <Menu />
 
           <div className="container-main">
-            
+
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+
             <Route exact path="/game">
               <Game />
             </Route>
 
             <Route exact path="/history">
-              <History/>
+              <History />
             </Route>
 
           </div>

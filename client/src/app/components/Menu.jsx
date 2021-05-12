@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 import '../styles/Menu.scss'
-import logo from '../images/256_16.png'
+import logo from '../images/avatar-template.png'
 
 export default function Menu() {
     return (

@@ -1,0 +1,109 @@
+@import "./shared.scss";
+
+.profile {
+  width: 100%;
+  height: 100%;
+  background: #e0aaff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile--header {
+  background: #651e62;
+  color: #fff;
+}
+
+.profile--info {
+  margin-top: 2rem;
+  width: 85%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile--icon {
+  width: 256px;
+  height: 256px;
+  border-radius: 9999px;
+  position: relative;
+  box-shadow: $small-component-shadow;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.profile--icon-upload {
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 75px;
+    height: 75px;
+    background: #7B2CBF;
+    border: none;
+    border-radius: 9999px;
+
+    & img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.profile--info-part {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile--data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile--input {
+    width: 300px;
+    margin: 1rem 0;
+}
+
+.profile--balance {
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: $text-shadow-default;
+}
+
+.profile--timestamp {
+    margin-top: 1rem;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 20px;
+    background: #9D4EDD;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: $text-shadow-default;
+}
+
+.profile--buttons {
+    margin: 2rem 0;
+    @include flex-center;
+    justify-content: space-between ;
+}
+
+.profile--btn {
+    margin: 0;
+    padding: .5rem 0;
+    width: 300px;
+    background: #7B2CBF;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: 600;
+    text-shadow: $text-shadow-default;
+}

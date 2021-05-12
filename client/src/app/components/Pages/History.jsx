@@ -55,7 +55,7 @@ export default function History() {
     } 
 
     return (
-        <div className="history-page">
+        <div className="history">
             <header className='header history-header'>Bet History</header>
 
             {seedData['bets'].map(record => {

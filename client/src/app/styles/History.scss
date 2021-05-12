@@ -2,6 +2,11 @@
 @import './mixins.scss';
 @import './variables.scss';
 
+.history {
+    background-image: url(../images/history-bg.jpg);
+    background-size: cover;
+}
+
 .history-header {
     background: #552B2B;
     color: #fff;
