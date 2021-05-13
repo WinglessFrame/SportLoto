@@ -1,4 +1,4 @@
-@import './shared.scss';
+@import "./shared.scss";
 
 .bet-price {
   margin: 1rem 0 2rem 0;
@@ -16,26 +16,34 @@
   }
 }
 
+.bet-price--input {
+  margin: 0 10px !important;
+  padding: 5px !important;
+  width: 40px;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .bet-price-color-5 {
-    background: $bet-price-5;
+  background: $bet-price-5;
 }
 
 .bet-price-color-4 {
-    background: $bet-price-4;
+  background: $bet-price-4;
 }
 
 .bet-price-color-3 {
-    background: $bet-price-3;
+  background: $bet-price-3;
 }
 
 .bet-price-color-2 {
-    background: $bet-price-2;
+  background: $bet-price-2;
 }
 
 .bet-price-color-1 {
-    background: $bet-price-1;
+  background: $bet-price-1;
 }
 
 .bet-price-color-default {
-    background: $bet-price-default;
+  background: $bet-price-default;
 }

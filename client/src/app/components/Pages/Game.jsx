@@ -48,7 +48,7 @@ export default function Game() {
 
             <header className="header bet-header">Make a bet!</header>
 
-            <BetPrice price={1} /> {/* //TODO get price from game info */}
+            <BetPrice initialPrice={1} isEditable={true}/> {/* //TODO get price from game info */}
 
             <form method="POST" onSubmit={submit}>
 

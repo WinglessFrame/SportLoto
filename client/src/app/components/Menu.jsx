@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import '../styles/Menu.scss'
 import logo from '../images/avatar-template.png'
 
-const IsuserAuthenticated = false // TODO  dev version
+const IsuserAuthenticated = true // TODO  dev version
 
 export default function Menu() {
     return (

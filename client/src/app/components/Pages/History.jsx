@@ -62,7 +62,7 @@ export default function History() {
                 return (
                     <div className={`history-item ${betResult(record.result)}`} key={record.pk}>
 
-                        <BetPrice price={record.price}/>
+                        <BetPrice initialPrice={record.price} isEditable={false}/>
 
                         {record.result && 
                             <div className='history-item--content win-info'>
