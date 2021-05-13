@@ -32,6 +32,14 @@ function App() {
               <History />
             </Route>
 
+            <Route exact path="/login">
+              
+            </Route>
+
+            <Route exact path="/register">
+              
+            </Route>
+
           </div>
         </div>
 
