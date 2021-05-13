@@ -9,6 +9,10 @@
     border-radius: $container-border-radius;
     box-shadow: $container-shadow;
 
+    & .menu-btn {
+        width: 80%;
+    }
+
     & .buttons-container{
         width: 100%;
         height: 50%;

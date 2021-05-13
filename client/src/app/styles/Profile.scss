@@ -37,14 +37,12 @@
 }
 
 .btn-svg {
-  padding: 0;
+  padding: 0 !important;
   position: absolute;
-  width: 75px;
-  height: 75px;
-  background: #7b2cbf;
+  width: 75px !important;
+  height: 75px !important;
+  background: #7b2cbf !important;
   border: none;
-  border-radius: 9999px;
-
   & img {
     width: 50%;
     height: 50%;
@@ -104,11 +102,11 @@
 }
 
 .profile--btn {
-  margin: 0;
-  padding: 0.5rem 0;
-  width: 300px;
-  background: #7b2cbf;
-  border-radius: 20px;
+  margin: 0 !important;
+  padding: 0.5rem 0 !important;
+  width: 300px !important;
+  background: #7b2cbf !important;
+  border-radius: 20px !important;
   border: none;
   color: #fff;
   font-size: 1.5rem;
