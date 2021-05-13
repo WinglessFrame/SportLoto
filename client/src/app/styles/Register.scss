@@ -1,0 +1,30 @@
+@import './shared.scss';
+
+.register {
+    background: #A9FBA2;
+}
+
+.register-header {
+    background: #20612A;
+    color: #fff;
+}
+
+.register--form {
+    @include flex-center;
+    flex-direction: column;
+}
+
+.register--input {
+    margin: 1rem 0;
+}
+
+.register--button {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    width: 300px;
+    margin: 2rem 0 4rem 0;
+    background: #5CA04A;
+    border-radius: 20px;
+    color: #fff;
+}
+

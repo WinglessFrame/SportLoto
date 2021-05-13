@@ -6,6 +6,7 @@ import Menu from './components/Menu'
 import Game from './components/Pages/Game'
 import History from './components/Pages/History';
 import Profile from './components/Pages/Profile';
+import Register from './components/Pages/Register';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             </Route>
 
             <Route exact path="/register">
-              
+              <Register/>
             </Route>
 
           </div>
