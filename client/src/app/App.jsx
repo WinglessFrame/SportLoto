@@ -7,6 +7,7 @@ import Game from './components/Pages/Game'
 import History from './components/Pages/History';
 import Profile from './components/Pages/Profile';
 import Register from './components/Pages/Register';
+import Login from './components/Pages/Login';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
             </Route>
 
             <Route exact path="/login">
-              
+              <Login/>
             </Route>
 
             <Route exact path="/register">

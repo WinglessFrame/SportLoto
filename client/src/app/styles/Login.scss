@@ -1,0 +1,29 @@
+@import "./shared.scss";
+
+.login {
+  background: #a2d0fb;
+}
+
+.login-header {
+  background: #525378;
+  color: #fff;
+}
+
+.login--form {
+  @include flex-center;
+  flex-direction: column;
+}
+
+.login--input {
+  margin: 1rem 0;
+}
+
+.login--button {
+  padding: 1rem 0 !important;
+  font-size: 1.5rem !important;
+  width: 300px;
+  margin: 2rem 0 4rem 0 !important;
+  background: #4A68A0 !important;
+  border-radius: 20px !important;
+  color: #fff;
+}
