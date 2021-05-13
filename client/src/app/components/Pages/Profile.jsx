@@ -2,6 +2,7 @@ import React, { } from 'react'
 import '../../styles/Profile.scss'
 import logo from "../../images/avatar-template.png"
 import uploadSVG from "../../images/photo-upload.svg"
+import logOutSVG from "../../images/logout.svg"
 
 export default function Profile() {
     return (
@@ -15,8 +16,8 @@ export default function Profile() {
 
                     <div className='profile--icon'>
                         <img src={logo} alt="Avatar" />
-                        <button className='btn profile--icon-upload'>
-                            <img src={uploadSVG} alt={"upload icon"}/>
+                        <button className='btn btn-svg profile--icon-upload'>
+                            <img src={uploadSVG} alt={"upload icon"} />
                         </button>
                     </div>
 
@@ -29,6 +30,11 @@ export default function Profile() {
                         <p className='profile--timestamp'> {"12 December 2002"} </p>
 
                     </div>
+
+                    <button className='btn btn-svg profile--logout'>  {/* //TODO logout button */}
+                        <img src={logOutSVG} alt={"logout icon"} />
+                    </button>
+
                 </div>
 
                 <div className="profile--buttons">
