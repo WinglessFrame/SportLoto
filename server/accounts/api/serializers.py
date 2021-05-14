@@ -70,7 +70,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         return value
 
     def get_message(self, obj):
-        return "Thank you for registering. Please verify your email before continuing"
+        return "Thank you for registering."
 
     def get_token(self, instance):   # instance of the User
         token = get_tokens_for_user(instance).get("token")
