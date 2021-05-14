@@ -4,3 +4,5 @@ from main.models import Profile
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('pk', 'balance', 'user', 'profile_image')
+
+admin.site.register(Profile, ProfileAdmin)
