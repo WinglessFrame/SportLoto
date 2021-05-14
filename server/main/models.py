@@ -10,7 +10,7 @@ def upload_profile_image(instance, filename):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', blank=False)
-    profileImage = models.ImageField(upload_to=upload_profile_image, blank=True)
+    profile_image = models.ImageField(upload_to=upload_profile_image, blank=True)
     balance = models.IntegerField(default=0, blank=False, null=False)
 
     def __str__(self):
