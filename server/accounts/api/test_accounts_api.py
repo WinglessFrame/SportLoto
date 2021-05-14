@@ -1,4 +1,4 @@
-import GinderProject.settings as settings
+import sportlotoAPI.settings as settings
 import jwt
 from django.contrib.auth.models import User
 from rest_framework import status
