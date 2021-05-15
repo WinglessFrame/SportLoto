@@ -1,11 +1,11 @@
 from rest_framework.authentication import SessionAuthentication
-from rest_framework.generics import UpdateAPIView
+from rest_framework.generics import UpdateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from main.api.serializers import AddToBalanceSerializer, UploadProfileImageSerializer
+from main.api.serializers import AddToBalanceSerializer, UploadProfileImageSerializer, UpdateUserInfoSerializer
 
 
 class AddToBalanceAPIView(APIView):
@@ -32,3 +32,12 @@ class UploadProfileImageAPIView(UpdateAPIView):
 
     def get_object(self):
         return self.request.user.profile
+
+
+class RetrieveUpdateUserInfoAPIView(RetrieveUpdateAPIView):
+    authentication_classes = (JWTAuthentication, SessionAuthentication)
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UpdateUserInfoSerializer
+
+    def get_object(self):
+        return self.request.user
