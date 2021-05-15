@@ -24,6 +24,8 @@ class ProfileAPI(APITestCase):
         adding_data = {"adding": ADDING_VALUE}
         self.client.force_login(user=user)
         response = self.client.post(url_add, adding_data, format='json')
-        # check balance
+        # check response
         self.assertEqual(response.data.get('balance'), ADDING_VALUE)
+        # check balance
+        self.assertEqual(Profile.objects.get(pk=1).balance, ADDING_VALUE)
 
