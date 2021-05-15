@@ -31,6 +31,10 @@ yarn-error.log*
 __pycache__/
 *.py[cod]
 *$py.class
+# images folder from django app
+server/images
+# migrations
+migrations/
 # MEDIA ROOT
 media/
 # STATIC ROOT

@@ -1,14 +1,12 @@
 from django.urls import path
 
-from main.api.views import AddToBalanceAPIView
+from main.api.views import AddToBalanceAPIView, UploadProfileImageAPIView
 
 app_name = 'main'
 
 urlpatterns = [
-    # path('register/', RegisterAPIView.as_view(), name='register'),
-    # path('token/', CustomTokenObtainPairView.as_view(), name='login'),
-    # path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('balance/', AddToBalanceAPIView.as_view(), name='add_to_balance')
+    path('balance/', AddToBalanceAPIView.as_view(), name='add_to_balance'),
+    path('image/', UploadProfileImageAPIView.as_view(), name='profile_image')
 ]
 
 
