@@ -1,4 +1,9 @@
+import io
+
+import requests
+from PIL import Image
 from django.contrib.auth.models import User
+from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
@@ -9,6 +14,9 @@ class ProfileAPI(APITestCase):
 
     def setUp(self) -> None:
         User.objects.create_user('testUser', 'test@mail.com', 'password')
+        token_url = reverse('accounts:login')
+        response = self.client.post(token_url, data={'username': 'testUser', 'password': 'password'}, format='json')
+        self.token = response.data['token']
 
     def test_profile_instance_is_created(self):
         profile_count = Profile.objects.all().count()
@@ -29,3 +37,23 @@ class ProfileAPI(APITestCase):
         # check balance
         self.assertEqual(Profile.objects.get(pk=1).balance, ADDING_VALUE)
 
+    def generate_photo_file(self):
+        file = io.BytesIO()
+        image = Image.new('RGBA', size=(100, 100), color=(155, 0, 0))
+        image.save(file, 'png')
+        file.name = 'test.png'
+        file.seek(0)
+        return file
+
+    def test_upload_profile_image(self):
+        upload_image_url = reverse('main:profile_image')
+        self.client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+
+        photo_file = self.generate_photo_file()
+
+        data = {
+            'photo': photo_file
+        }
+
+        response = self.client.patch(upload_image_url, data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
