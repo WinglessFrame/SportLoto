@@ -1,6 +1,5 @@
 import io
 
-import requests
 from PIL import Image
 from django.contrib.auth.models import User
 from rest_framework import status
@@ -57,3 +56,14 @@ class ProfileAPI(APITestCase):
 
         response = self.client.patch(upload_image_url, data, format='multipart')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_profile_data_enpoint(self):
+        url = reverse('main:profile_info')
+        self.client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        # get
+        get_response = self.client.get(url)
+        self.assertEqual(get_response.data['email'], 'test@mail.com')
+        # patch
+        NEW_NAME = 'Bob'
+        patch_response = self.client.patch(url, data={'first_name': NEW_NAME}, format='json')
+        self.assertEqual(User.objects.get(pk=1).first_name, NEW_NAME)
