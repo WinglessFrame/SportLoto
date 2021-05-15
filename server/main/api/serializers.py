@@ -16,6 +16,13 @@ class UploadProfileImageSerializer(ModelSerializer):
 
 
 class UpdateUserInfoSerializer(ModelSerializer):
+    balance = serializers.SerializerMethodField()
+
+    def get_balance(self, obj):
+        return obj.profile.balance
+
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'date_joined')
+        fields = ('first_name', 'last_name', 'email', 'date_joined', 'balance')
+
+
