@@ -36,6 +36,7 @@ class Game(models.Model):
     user = models.ForeignKey(User, null=True, blank=False, verbose_name='games', on_delete=models.SET_NULL)
     bet_price = models.PositiveIntegerField(null=False, blank=False, default=1)
     bet = models.CharField(null=False, blank=False, max_length=100)
+    win_sequence = models.CharField(null=False, blank=False, max_length=100)
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
     result = models.BooleanField(null=False, blank=False)
