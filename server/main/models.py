@@ -33,7 +33,7 @@ def save_user_profile(sender, instance, **kwargs):
 
 
 class Game(models.Model):
-    user = models.ForeignKey(User, null=True, blank=False, verbose_name='games', on_delete=models.SET_NULL)
+    user_profile = models.ForeignKey(Profile, null=True, blank=False, related_name='games', on_delete=models.SET_NULL)
     bet_price = models.PositiveIntegerField(null=False, blank=False, default=1)
     bet = models.CharField(null=False, blank=False, max_length=100)
     win_sequence = models.CharField(null=False, blank=False, max_length=100)
@@ -43,7 +43,7 @@ class Game(models.Model):
     matches = models.PositiveIntegerField()
 
     def __str__(self):
-        return f'game {self.pk} {self.user.username}'
+        return f'game {self.pk} {self.user_profile.user.username}'
 
     class Meta:
         verbose_name = 'Game'

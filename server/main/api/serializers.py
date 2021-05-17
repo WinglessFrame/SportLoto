@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, Serializer
 
-from main.models import Profile
+from main.models import Profile, Game
 
 
 class AddToBalanceSerializer(Serializer):
@@ -26,3 +26,9 @@ class UpdateUserInfoSerializer(ModelSerializer):
         fields = ('first_name', 'last_name', 'email', 'date_joined', 'balance')
 
 
+class GameHistorySerializer(ModelSerializer):
+    time = serializers.TimeField(format='%H:%M')
+
+    class Meta:
+        model = Game
+        fields = ('pk', 'bet_price', 'result', 'matches', 'date', 'time')

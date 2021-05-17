@@ -8,7 +8,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'user', 'bet', 'win_sequence', 'bet_price', 'date', 'time', 'result', 'matches')
+    list_display = ('pk', 'user_profile', 'bet', 'win_sequence', 'bet_price', 'date', 'time', 'result', 'matches')
 
 
 admin.site.register(Profile, ProfileAdmin)

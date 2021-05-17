@@ -1,11 +1,12 @@
 from rest_framework.authentication import SessionAuthentication
-from rest_framework.generics import UpdateAPIView, RetrieveUpdateAPIView
+from rest_framework.generics import UpdateAPIView, RetrieveUpdateAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from main.api.serializers import AddToBalanceSerializer, UploadProfileImageSerializer, UpdateUserInfoSerializer
+from main.api.serializers import AddToBalanceSerializer, UploadProfileImageSerializer, UpdateUserInfoSerializer, \
+    GameHistorySerializer
 
 
 class AddToBalanceAPIView(APIView):
@@ -41,3 +42,12 @@ class RetrieveUpdateUserInfoAPIView(RetrieveUpdateAPIView):
 
     def get_object(self):
         return self.request.user
+
+
+class GameHistoryAPIView(ListAPIView):
+    authentication_classes = (JWTAuthentication, SessionAuthentication)
+    permission_classes = (IsAuthenticated,)
+    serializer_class = GameHistorySerializer
+
+    def get_queryset(self):
+        return self.request.user.profile.games
