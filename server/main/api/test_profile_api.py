@@ -67,3 +67,33 @@ class ProfileAPI(APITestCase):
         NEW_NAME = 'Bob'
         patch_response = self.client.patch(url, data={'first_name': NEW_NAME}, format='json')
         self.assertEqual(User.objects.get(pk=1).first_name, NEW_NAME)
+
+    def test_game_endpoint(self):
+        url = reverse('main:game')
+        response = self.client.post(url)
+        # auth required
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        #
+        self.client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        # bad request
+        response = self.client.post(url, data={'bet_price': 5})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        response = self.client.post(url, data={'bet': '3 2 1 5 3'})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        response = self.client.post(url, data={'something': 'bad'})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        # good request
+        response = self.client.post(url, data={'bet': '1 3 5 7 9', 'bet_price': 5})
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_history_endpoint(self):
+        url = reverse('main:games_history')
+        # if not authorized -> 403
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        # if authorized -> 200 + data
+        self.client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # Empty list
+        self.assertEqual(bool(response.data), False)

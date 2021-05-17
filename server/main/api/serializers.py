@@ -1,3 +1,5 @@
+import random
+
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, Serializer
@@ -31,4 +33,10 @@ class GameHistorySerializer(ModelSerializer):
 
     class Meta:
         model = Game
-        fields = ('pk', 'bet_price', 'result', 'matches', 'date', 'time')
+        fields = ('pk', 'bet_price', 'result', 'date', 'time', 'matches', 'win_value')
+
+
+class GameSerializer(serializers.Serializer):
+    bet = serializers.CharField()
+    bet_price = serializers.IntegerField()
+

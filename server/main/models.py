@@ -41,6 +41,7 @@ class Game(models.Model):
     time = models.TimeField(auto_now_add=True)
     result = models.BooleanField(null=False, blank=False)
     matches = models.PositiveIntegerField()
+    win_value = models.PositiveIntegerField(blank=False, null=True)
 
     def __str__(self):
         return f'game {self.pk} {self.user_profile.user.username}'
