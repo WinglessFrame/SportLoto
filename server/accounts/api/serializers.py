@@ -32,7 +32,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         data.update({'last_name': self.user.last_name})
         data.update({'is_superuser': self.user.is_superuser})
         data.update({'email': self.user.email})
-        data.update({'image': self.user.profile.profile_image.url})
+        data.update({'balance': self.user.profile.balance})
         return data
 
 

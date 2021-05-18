@@ -71,9 +71,8 @@ class GameAPIView(APIView):
     serializer_class = GameSerializer
 
     def post(self, request, *args, **kwargs):
-
-        bet = request.POST.get('bet', None)
-        bet_price = request.POST.get('bet_price', None)
+        bet = request.data.get('bet', None)
+        bet_price = request.data.get('bet_price', None)
 
         if not bet or not bet_price:
             return Response(
@@ -89,11 +88,15 @@ class GameAPIView(APIView):
         result = (count >= 1)
 
         win_sequence = list(map(lambda x: str(x), win_sequence))
+        profile = request.user.profile
 
         if result:
             win_value = count ** 2 * bet_price
+            profile.balance += win_value
         else:
             win_value = 0
+            profile.balance -= bet_price
+        profile.save()
         # 1 -> return bet
         # 2 -> 4x
         # 3 -> 9x
@@ -116,7 +119,8 @@ class GameAPIView(APIView):
                 'date': obj.date,
                 'result': result,
                 'matchesCount': obj.matches,
-                'winValue': win_value
+                'winValue': win_value,
+                'balance': obj.user_profile.balance
             },
             status=status.HTTP_201_CREATED
         )
