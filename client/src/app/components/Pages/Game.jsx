@@ -1,10 +1,14 @@
 import React, { useState, useRef } from 'react'
 import BetPrice from '../shared/BetPrice'
 import '../../styles/Game.scss'
+import { BASE_URL } from '../../context'
+import axios from 'axios'
+import { rootStore } from '../../store/RootStore'
 
 export default function Game() {
 
     const [inputsValues, setInputsValues] = useState({})
+    const [price, setPrice] = useState(1)
     const inputsRef = useRef([])
 
     const onChangeHandler = (target, idx) => {
@@ -41,6 +45,29 @@ export default function Game() {
 
     const submit = (event) => {
         event.preventDefault() //TODO submit bet
+
+        const betUrl = `${BASE_URL}/api/game/`
+        const bet = Object.values(inputsValues).join(' ')
+        console.log(bet);
+        try{
+
+        
+        axios.post(betUrl,
+            {
+                bet_price: price,
+                bet: bet
+            },
+            {
+                headers: {
+                    'Authorization': `JWT ${rootStore.userStore.user['token']}`
+                }
+            }
+        )
+        .then(response => console.log(response.data))
+        } catch (er) {
+            console.log(er);
+        }
+
     }
 
     return (
@@ -48,7 +75,7 @@ export default function Game() {
 
             <header className="header bet-header">Make a bet!</header>
 
-            <BetPrice initialPrice={1} isEditable={true}/> {/* //TODO get price from game info */}
+            <BetPrice initialPrice={price} isEditable={true} setPrice={setPrice} /> {/* //TODO get price from game info */}
 
             <form method="POST" onSubmit={submit}>
 

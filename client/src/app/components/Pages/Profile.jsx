@@ -4,6 +4,7 @@ import logo from "../../images/avatar-template.png"
 import uploadSVG from "../../images/photo-upload.svg"
 import logOutSVG from "../../images/logout.svg"
 
+
 export default function Profile() {
     return (
         <div className='profile'>

@@ -11,42 +11,42 @@ import Login from './components/Pages/Login';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+      <BrowserRouter>
+        <div className="App">
 
-        <Header />
+          <Header />
 
-        <div className='menu-main-container'>
+          <div className='menu-main-container'>
 
-          <Menu />
+            <Menu />
 
-          <div className="container-main">
+            <div className="container-main">
 
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
+              <Route exact path="/profile">
+                <Profile />
+              </Route>
 
-            <Route exact path="/game">
-              <Game />
-            </Route>
+              <Route exact path="/game">
+                <Game />
+              </Route>
 
-            <Route exact path="/history">
-              <History />
-            </Route>
+              <Route exact path="/history">
+                <History />
+              </Route>
 
-            <Route exact path="/login">
-              <Login/>
-            </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
 
-            <Route exact path="/register">
-              <Register/>
-            </Route>
+              <Route exact path="/register">
+                <Register />
+              </Route>
 
+            </div>
           </div>
-        </div>
 
-      </div>
-    </BrowserRouter>
+        </div>
+      </BrowserRouter>
   );
 }
 

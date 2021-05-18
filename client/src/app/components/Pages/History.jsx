@@ -20,7 +20,7 @@ export default function History() {
                 date: "20 April, 2021",
                 result: true,
                 matchesCount: 4,
-                winPrice: 8
+                winValue: 8
             },
             {
                 pk: 23,
@@ -36,7 +36,7 @@ export default function History() {
                 date: "02 May, 2021",
                 result: true,
                 matchesCount: 3,
-                winPrice: 6
+                winValue: 6
             },
             {
                 pk: 11,
@@ -67,7 +67,7 @@ export default function History() {
                         {record.result && 
                             <div className='history-item--content win-info'>
                                 <p>Match : {record.matchesCount}</p>
-                                <p>Win: {record.winPrice}</p>
+                                <p>Win: {record.winValue}</p>
                             </div>
                         }
 

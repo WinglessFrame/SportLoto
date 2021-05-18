@@ -3,9 +3,7 @@ import '../../styles/BetPrice.scss'
 import arrowSVG from '../../images/down-chevron.svg'
 
 
-export default function BetPrice({ initialPrice, isEditable }) {
-
-    const [price, setPrice] = useState(initialPrice)
+export default function BetPrice({ initialPrice: price, isEditable, setPrice}) {
 
     const stylePicker = (price) => {
         const colorNumber = price <= 5 && price > 0 ? price.toString() : 'default'

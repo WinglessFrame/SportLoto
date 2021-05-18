@@ -3,14 +3,17 @@ import { NavLink } from 'react-router-dom';
 
 import '../styles/Menu.scss'
 import logo from '../images/avatar-template.png'
+import { rootStore } from '../store/RootStore';
+import { observer } from 'mobx-react-lite';
 
-const IsuserAuthenticated = true // TODO  dev version
+function Menu() {
 
-export default function Menu() {
+    const {user} = rootStore.userStore
+
     return (
         <menu className='main-menu'>
 
-            {IsuserAuthenticated
+            {user
                 ? <div className='buttons-container'>
 
                     <NavLink className='btn menu-btn profile-btn' activeClassName='active-btn' to='/profile'>Profile</NavLink>
@@ -30,15 +33,17 @@ export default function Menu() {
                 </div>
             }
 
-            {IsuserAuthenticated &&
+            {user &&
                 <div className='profile-thumbnail'>
                     <img src={logo} alt={"Avatar"}></img>
-                    <h3>Darth</h3>
-                    <h3>Maul</h3>
-                    <h2>322$</h2>
+                    <h3>{user.first_name}</h3>
+                    <h3>{user.last_name}</h3>
+                    <h2>{user.balance}</h2>
                 </div>
             }
 
         </menu>
     );
 }
+
+export default observer(Menu)
