@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party apps
     'rest_framework',
+    'corsheaders',
     # my apps
     'accounts',
     'main',
@@ -54,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
 
 ROOT_URLCONF = 'sportlotoAPI.urls'
@@ -76,7 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sportlotoAPI.wsgi.application'
 
-
+CORS_ORIGIN_ALLOW_ALL = True  # DEVELOPMENT
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
