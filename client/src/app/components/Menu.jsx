@@ -41,7 +41,7 @@ function Menu() {
                     <img src={`${BASE_URL}${user.image}`} alt={"Avatar"}></img>
                     <h3>{user.first_name}</h3>
                     <h3>{user.last_name}</h3>
-                    <h2>{user.balance}</h2>
+                    <h2>$ {user.balance}</h2>
                 </div>
             }
 

@@ -17,6 +17,10 @@ export class UserStore {
            
     }
 
+    logOut() {
+        this.user = null
+    }
+
     registerUser = async ({email, username, password1, password2}) => {
         try {
             await axios.post(registerUrl, {

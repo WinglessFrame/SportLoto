@@ -4,6 +4,7 @@ import logo from "../../images/avatar-template.png"
 import uploadSVG from "../../images/photo-upload.svg"
 import logOutSVG from "../../images/logout.svg"
 
+import { rootStore } from '../../store/RootStore'
 
 export default function Profile() {
     return (
@@ -32,11 +33,13 @@ export default function Profile() {
 
                     </div>
 
-                    <button className='btn btn-svg profile--logout'>  {/* //TODO logout button */}
-                        <img src={logOutSVG} alt={"logout icon"} />
-                    </button>
+
 
                 </div>
+
+                <button className='btn btn-svg profile--logout' onClick={rootStore.userStore.logOut}>  {/* //TODO logout button */}
+                    <img src={logOutSVG} alt={"logout icon"} />
+                </button>
 
                 <div className="profile--buttons">
                     <button className='btn profile--btn'>Save changes</button>
