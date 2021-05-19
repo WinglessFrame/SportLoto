@@ -83,7 +83,7 @@ class ProfileAPI(APITestCase):
         response = self.client.post(url, data={'something': 'bad'})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         # good request
-        response = self.client.post(url, data={'bet': '1 3 5 7 9', 'bet_price': 5})
+        response = self.client.post(url, data={'bet': '1 3 5 7 9', 'bet_price': '5'})
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_history_endpoint(self):

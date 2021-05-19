@@ -97,8 +97,7 @@ class GameAPIView(APIView):
             win_value = 0
             profile.balance -= bet_price
         profile.save()
-        # 2 -> 4x
-        # 3 -> 9x
+
 
         obj = Game.objects.create(
             user_profile=user_profile,

@@ -25,6 +25,10 @@ class UserPublicDisplaySerializer(serializers.ModelSerializer):
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super(CustomTokenObtainPairSerializer, self).validate(attrs)
+        if self.user.profile.profile_image:
+            image = self.user.profile.profile_image.url
+        else:
+            image = '/media/default_image/default.png'
         data['token'] = data.pop('access')
         data.update({'user': self.user.username})
         data.update({'id': self.user.id})
@@ -33,6 +37,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         data.update({'is_superuser': self.user.is_superuser})
         data.update({'email': self.user.email})
         data.update({'balance': self.user.profile.balance})
+        data.update(({'image': image}))
         return data
 
 

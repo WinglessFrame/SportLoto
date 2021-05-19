@@ -9,7 +9,8 @@ def upload_profile_image(instance, filename):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', blank=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', blank=False,
+                                default='media/default_image/default.png')
     profile_image = models.ImageField(upload_to=upload_profile_image, blank=True)
     balance = models.PositiveIntegerField(default=0, blank=False, null=False)
 
