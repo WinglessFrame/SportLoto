@@ -27,10 +27,16 @@
   border-radius: $container-border-radius;
   box-shadow: $container-shadow;
   overflow: hidden;
+  position: absolute;
+  right: 5rem;
 }
 
 
 @media screen and (max-width: 1000px) {
+  .container-main {
+    position: relative;
+    right: 0;
+  }
   .menu-main-container {
     flex-direction: column;
     @include flex-center;

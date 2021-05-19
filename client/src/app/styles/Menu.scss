@@ -8,6 +8,7 @@
     background: $container-bg;
     border-radius: $container-border-radius;
     box-shadow: $container-shadow;
+    position: fixed;
 
     & .menu-btn {
         width: 80%;
@@ -63,5 +64,11 @@
     }
 
 }
+
+@media screen and (max-width: 1000px) {
+    .main-menu {
+        position: relative;
+    }
+  }
 
 
