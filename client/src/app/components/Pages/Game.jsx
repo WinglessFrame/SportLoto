@@ -45,10 +45,16 @@ export default function Game() {
 
     const submit = (event) => {
         event.preventDefault()
-
+        if (Object.values(inputsValues).length !== 5) {
+            alert('Input all 5 fields!')
+            return
+        }
+        if (new Set(Object.values(inputsValues)).size !== 5) {
+            alert('Input unique values')
+            return
+        }
         const betUrl = `${BASE_URL}/api/game/`
         const bet = Object.values(inputsValues).join(' ')
-        console.log(bet);
         try{
 
         
