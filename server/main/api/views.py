@@ -91,13 +91,12 @@ class GameAPIView(APIView):
         profile = request.user.profile
 
         if result:
-            win_value = count ** 2 * bet_price
+            win_value = count ** (count - 1) * bet_price
             profile.balance += win_value
         else:
             win_value = 0
             profile.balance -= bet_price
         profile.save()
-        # 1 -> return bet
         # 2 -> 4x
         # 3 -> 9x
 

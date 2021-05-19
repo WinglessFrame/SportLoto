@@ -38,15 +38,11 @@ export class UserStore {
 
     loginUser = async ({username, password}) => {
         try {
-            console.log({username, password})
             const {data} = await axios.post(loginUrl, {
                 username,
                 password
             }) 
-
             this.user = data
-
-            console.log(this.user)
         } catch (ex) {
             console.log(ex)
         }

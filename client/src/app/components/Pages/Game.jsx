@@ -44,7 +44,7 @@ export default function Game() {
     }
 
     const submit = (event) => {
-        event.preventDefault() //TODO submit bet
+        event.preventDefault()
 
         const betUrl = `${BASE_URL}/api/game/`
         const bet = Object.values(inputsValues).join(' ')
@@ -63,7 +63,11 @@ export default function Game() {
                 }
             }
         )
-        .then(response => console.log(response.data))
+        .then(response => {
+            console.log(response);
+            rootStore.userStore.user.balance = response.data.balance
+            alert(response.data.result ? `Gratz, you've won ${response.data.winValue} $` : `You lose :(`)
+        })
         } catch (er) {
             console.log(er);
         }
