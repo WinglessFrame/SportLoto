@@ -1,4 +1,3 @@
-import { BASE_URL } from '../../context';
 import React, { useState } from 'react'
 import '../../styles/Register.scss'
 import { rootStore } from '../../store/RootStore';

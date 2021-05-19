@@ -5,10 +5,13 @@ import '../styles/Menu.scss'
 import logo from '../images/avatar-template.png'
 import { rootStore } from '../store/RootStore';
 import { observer } from 'mobx-react-lite';
+import { BASE_URL } from '../context';
 
 function Menu() {
 
     const {user} = rootStore.userStore
+    
+
 
     return (
         <menu className='main-menu'>
@@ -35,7 +38,7 @@ function Menu() {
 
             {user &&
                 <div className='profile-thumbnail'>
-                    <img src={logo} alt={"Avatar"}></img>
+                    <img src={`${BASE_URL}${user.image}`} alt={"Avatar"}></img>
                     <h3>{user.first_name}</h3>
                     <h3>{user.last_name}</h3>
                     <h2>{user.balance}</h2>

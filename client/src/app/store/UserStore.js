@@ -19,20 +19,16 @@ export class UserStore {
 
     registerUser = async ({email, username, password1, password2}) => {
         try {
-            console.log({
-                email,username,password1,password2
-            })
-
-            const {username: usern, password} = await axios.post(registerUrl, {
+            await axios.post(registerUrl, {
                 email: email,
                 username: username,
                 password: password1,
                 password2: password2
             })
-
-            await this.loginUser({usern, password})
+            const password = password1
+            await this.loginUser({username, password})
         } catch (ex) {
-            console.log(ex.message)
+            alert(ex.response.request.responseText)
         }
     }
 
@@ -44,7 +40,7 @@ export class UserStore {
             }) 
             this.user = data
         } catch (ex) {
-            console.log(ex)
+            alert(ex.response.request.responseText)
         }
     }
 }
