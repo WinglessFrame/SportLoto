@@ -70,9 +70,8 @@ export default function Game() {
             }
         )
         .then(response => {
-            console.log(response);
             rootStore.userStore.user.balance = response.data.balance
-            alert(response.data.result ? `Gratz, you've won ${response.data.winValue} $` : `You lose :(`)
+            alert(response.data.result ? `Gratz, you've won $ ${response.data.winValue} \nmatches: ${response.data.matchesCount}` : `You lose :(`)
         })
         } catch (er) {
             console.log(er);

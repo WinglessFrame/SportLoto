@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 import '../styles/Menu.scss'
-import logo from '../images/avatar-template.png'
 import { rootStore } from '../store/RootStore';
 import { observer } from 'mobx-react-lite';
 import { BASE_URL } from '../context';

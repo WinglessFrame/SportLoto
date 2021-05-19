@@ -1,17 +1,21 @@
+import { observer } from 'mobx-react-lite'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { rootStore } from '../../store/RootStore'
 import '../../styles/Login.scss'
 
-export default function Login() {
+function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const {loginUser} = rootStore.userStore
 
+    const history = useHistory()
+
     const onSubmitHandler = (e) => {
         e.preventDefault()
-
         loginUser({username, password})
+        history.push('/')
     }
 
     return (
@@ -28,3 +32,5 @@ export default function Login() {
         </div>
     )
 }
+
+export default observer(Login)

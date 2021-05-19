@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 
 import './styles/App.scss';
 import Header from './components/Header'
@@ -8,6 +8,7 @@ import History from './components/Pages/History';
 import Profile from './components/Pages/Profile';
 import Register from './components/Pages/Register';
 import Login from './components/Pages/Login';
+import { rootStore } from './store/RootStore';
 
 function App() {
   return (
@@ -36,10 +37,12 @@ function App() {
 
               <Route exact path="/login">
                 <Login />
+                {rootStore.userStore.user && <Redirect to="/profile"/>}
               </Route>
 
               <Route exact path="/register">
                 <Register />
+                {rootStore.userStore.user && <Redirect to="/profile"/>}
               </Route>
 
             </div>

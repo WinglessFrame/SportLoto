@@ -1,12 +1,36 @@
-import React, { } from 'react'
+import React, { useState } from 'react'
 import '../../styles/Profile.scss'
-import logo from "../../images/avatar-template.png"
 import uploadSVG from "../../images/photo-upload.svg"
 import logOutSVG from "../../images/logout.svg"
 
 import { rootStore } from '../../store/RootStore'
+import { BASE_URL } from '../../context'
+import { observer } from 'mobx-react-lite'
+import { Link, useHistory } from 'react-router-dom'
 
-export default function Profile() {
+function Profile() {
+    const [first_name, setFirstName] = useState(rootStore.userStore.user.first_name)
+    const [last_name, setLastName] = useState(rootStore.userStore.user.last_name)
+    const [email, setEmail] = useState(rootStore.userStore.user.email)
+
+    const history = useHistory()
+
+    const updateUserInfoHandler = (event) => {
+        event.preventDefault()
+        rootStore.userStore.updateUserInfo({ first_name, last_name, email })
+    }
+
+    const addToBalance = event => {
+        event.preventDefault()
+        const adding = parseInt(prompt(`Enter value`))
+        rootStore.userStore.addToBalance({ adding })
+    }
+
+    const logOutHandler = event => {
+        history.push('/login')
+        rootStore.userStore.logOut()
+    }
+
     return (
         <div className='profile'>
 
@@ -17,33 +41,36 @@ export default function Profile() {
                 <div className='profile--info-part'>
 
                     <div className='profile--icon'>
-                        <img src={logo} alt="Avatar" />
+
+                        <img src={`${BASE_URL}${rootStore.userStore.user.image}`} alt="Avatar" />
+
                         <button className='btn btn-svg profile--icon-upload'>
                             <img src={uploadSVG} alt={"upload icon"} />
                         </button>
+
+
+                        <Link className='btn btn-svg profile--logout' onClick={logOutHandler} to={'/login'}>
+                            <img src={logOutSVG} alt={"logout icon"} />
+                        </Link>
+
+
+
                     </div>
 
                     <div className='profile--data'>
 
-                        <input type='text' value={'Darth'} className='input-text profile--input' />  {/* TODO data from API */}
-                        <input type='text' value={'Maul'} className='input-text profile--input' />
-                        <input type='text' value={'darkSide@zv.com'} className='input-text profile--input' />
-                        <p className='profile--balance'> {322} $ </p>
-                        <p className='profile--timestamp'> {"12 December 2002"} </p>
+                        <input type='text' value={first_name} className='input-text profile--input' onChange={({ target }) => setFirstName(target.value)} />
+                        <input type='text' value={last_name} className='input-text profile--input' onChange={({ target }) => setLastName(target.value)} />
+                        <input type='email' value={email} className='input-text profile--input' onChange={({ target }) => setEmail(target.value)} />
+                        <p className='profile--balance'> {rootStore.userStore.user.balance} $ </p>
 
                     </div>
 
-
-
                 </div>
 
-                <button className='btn btn-svg profile--logout' onClick={rootStore.userStore.logOut}>  {/* //TODO logout button */}
-                    <img src={logOutSVG} alt={"logout icon"} />
-                </button>
-
                 <div className="profile--buttons">
-                    <button className='btn profile--btn'>Save changes</button>
-                    <button className='btn profile--btn'>Add to balance</button>
+                    <button className='btn profile--btn' onClick={event => updateUserInfoHandler(event)}>Save changes</button>
+                    <button className='btn profile--btn' onClick={event => addToBalance(event)}>Add to balance</button>
                 </div>
 
             </form>
@@ -52,3 +79,5 @@ export default function Profile() {
         </div>
     )
 }
+
+export default observer(Profile)
