@@ -15,7 +15,7 @@ function Login() {
     const onSubmitHandler = (e) => {
         e.preventDefault()
         loginUser({username, password})
-        history.push('/')
+        history.push('/game')
     }
 
     return (

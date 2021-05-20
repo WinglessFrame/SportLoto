@@ -9,7 +9,7 @@ from rest_framework.test import APITestCase
 from main.models import Profile
 
 
-class ProfileAPI(APITestCase):
+class ProfileAPITestCase(APITestCase):
 
     def setUp(self) -> None:
         User.objects.create_user('testUser', 'test@mail.com', 'password')
@@ -57,7 +57,7 @@ class ProfileAPI(APITestCase):
         response = self.client.patch(upload_image_url, data, format='multipart')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_profile_data_enpoint(self):
+    def test_profile_data_endpoint(self):
         url = reverse('main:profile_info')
         self.client.credentials(HTTP_AUTHORIZATION='JWT ' + self.token)
         # get

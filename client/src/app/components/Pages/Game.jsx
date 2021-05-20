@@ -53,11 +53,13 @@ export default function Game() {
             alert('Input unique values')
             return
         }
+        if (rootStore.userStore.user.balance === 0) {
+            alert("Add to balance to play")
+            return
+        }
         const betUrl = `${BASE_URL}/api/game/`
         const bet = Object.values(inputsValues).join(' ')
         try{
-
-        
         axios.post(betUrl,
             {
                 bet_price: price,
@@ -74,7 +76,7 @@ export default function Game() {
             alert(response.data.result ? `Gratz, you've won $ ${response.data.winValue} \nmatches: ${response.data.matchesCount}` : `You lose :(`)
         })
         } catch (er) {
-            console.log(er);
+            alert(er.response.request.responseText)
         }
 
     }

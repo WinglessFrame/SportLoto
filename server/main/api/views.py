@@ -83,6 +83,12 @@ class GameAPIView(APIView):
         win_sequence = random.sample(range(1, 37), 5)
         user_profile = request.user.profile
 
+        if user_profile.balance == 0:
+            return Response(
+                data={'message': 'You\'r balance is empty, add to balance to play'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
         input_sequence = list(map(lambda x: int(x), bet.split(' ')))
         count = calculate_equals_count(input_sequence, win_sequence)
         result = (count >= 1)
